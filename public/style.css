@@ -1,0 +1,32 @@
+nav{
+    border-bottom: blue 1px solid;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 10px;
+}
+
+#delete{
+    border: 1px solid red;
+    padding: 10px;
+    color: red;
+    background-color: white;
+    cursor: pointer;
+}
+
+#delete:hover{
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+input{
+    display: block;
+    margin: 10px;
+}

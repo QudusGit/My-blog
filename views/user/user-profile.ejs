@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+
+    <div class="blogs">
+        <h2><%= userProfile.firstname %> <%= userProfile.lastname %> Profile Page</h2>
+
+        <div>
+
+            <% if(blogs) { %>
+
+                <h2>Blogs List</h2>
+
+                <% for(let i = 0; i < blogs.length; i++) { %>
+
+                    <a href="/blogs/<%= blogs[i]._id%>">
+                        <h3><%= blogs[i].title %></h3>
+                    </a>
+
+                    <p><%= blogs[i].body %></p>
+    
+                <% } %>
+
+            <% } else { %>
+
+                <h4> No Blogs Yet</h4>
+
+            <% } %> 
+
+        </div>
+
+    </div>
+        
+</body>
+</html>

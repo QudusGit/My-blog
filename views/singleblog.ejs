@@ -1,0 +1,37 @@
+<%- include('./partials/header.ejs') %>
+    <div>
+
+        <h2><%= blog.title %></h2>
+        <p><%= blog.body %></p>
+
+    </div>
+
+    <div>
+        <% if(blog.user.id === user.id) { %>
+
+            <a id="delete" data-doc="<%= blog._id%>">delete</a>
+
+        <% } %>
+    </div>
+
+    <script>
+
+        const trashcan = document.querySelector('#delete')
+            
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/blogs/${trashcan.dataset.doc}`
+            
+            fetch(endpoint, {
+                method: 'delete'
+            })
+            .then(res => res.json())
+            .then(data => {
+                window.location = data.redirect;
+            })
+            .catch(err => {})
+        })
+    
+    </script>
+
+</body>
+</html>
